@@ -5,6 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:href": "ng build --base-href ./",
+    "delete:docs": "del docs",
+    "copy:dist": "copyfiles dist/country-app/* ./docs -f",
+    "build:github": " npm run delete:docs && npm run build:href && npm run copy:dist",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -20,7 +24,8 @@
     "@angular/router": "^15.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.12.0"
+    "zone.js": "~0.12.0",
+    "copyfiles": "^2.4.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.4",
@@ -33,6 +38,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.9.4"
+    "typescript": "~4.9.4",
+    "del-cli": "^5.0.0"
   }
 }
