@@ -15,13 +15,17 @@ const routes: Routes = [
     component: ByCountryPageComponent
   },
   {
-    path: 'by-regin',
+    path: 'by-region',
     component: ByRegionPageComponent
   },
   {
     path: 'by/:id',
     component: CountryPageComponent
   },
+    {
+    path: '**',
+    redirectTo: 'by-capital'
+  }
 ];
 
 @NgModule({
